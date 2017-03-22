@@ -15,5 +15,5 @@
         <input type="text" #anio="ngForm" ngControl="anio" [(ngModel)]="nuevaPelicula.anio" required pattern="[0-9]{4}"/>
         <span *ngIf="!anio.valid">No válido</span>
     </p>
-    <input type="submit" value="Crear película" [disabled]="!miFormulario.form.valid" />
+    <input type="submit" value="Crear película" [disabled]="!miFormulario.form.valid"/>
 </form>
