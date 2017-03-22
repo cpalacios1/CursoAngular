@@ -1,0 +1,21 @@
+<h4>{{datoServicio}}</h4>
+
+<button (click)="onShowHide(!mostrarDatos)" [class.showingData]="mostrarDatos">Mostrar datos</button>
+<button (click)="onShowHide(!mostrarDatos)" [class.showingData]="!mostrarDatos">Ocultar datos</button>
+<ul *ngIf="mostrarDatos">
+    <li>Título: {{pelicula.titulo}}</li>
+    <li>Director: {{pelicula.director}}</li>
+    <li>Año: {{pelicula.anio}}</li>
+</ul>
+
+<p>
+    Cambiar titulo:<input type="text" (keypress)="debug()" [(ngModel)]="pelicula.titulo"/>
+</p>
+
+<p>   Listado de películas: </p>
+<ul *ngFor="#pelicula of peliculas" style=" list-style-type: none;">
+    <li (click)="onCambiarPelicula(pelicula)" [class.clicked]="estaSeleccionada(pelicula)">Título: <strong>{{pelicula.titulo}}</strong></li>
+    <li>Director: <strong>{{pelicula.director}}</strong></li>
+    <li>Año: <strong>{{pelicula.anio}}</strong></li>
+    <li><a [routerLink]="['CrearPelicula', {titulo:pelicula.titulo, director:pelicula.director, anio:pelicula.anio }]">Copiar</a></li>
+</ul>

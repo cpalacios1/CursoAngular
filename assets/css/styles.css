@@ -1,0 +1,15 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    text-decoration: underline;
+}
+
+.showingData {
+    display: none;
+}
+
+.clicked {
+    font-size: 20px;
+    color: blue;
+    font-family: A;
+}
